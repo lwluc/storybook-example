@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { calculatorComponent } from './component/calculator.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [calculatorComponent],
+  template: `
+    <main class="main">
+    <div class="content">
+      <h1>Hello, {{ title }}</h1>
+      <div>
+        <hr>
+        <app-calculator />
+      </div>
+    </div>
+  </main>
+  `
 })
 export class AppComponent {
   title = 'storybook-example';
