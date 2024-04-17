@@ -1,0 +1,462 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-b0550a27c77e74dfb0bb6534fc0c6e29f6b3a378c605f1968d38ebe93ce5f411d3433f0ff6018ba3359d3ebddea01ee30b6014526a38dbfd437ce7e550687395",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "  <main class=\"main\">\n  <div class=\"content\">\n    <app-header />\n    <div>\n      <hr>\n      <app-calculator />\n    </div>\n  </div>\n</main>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'storybook-example'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "calculatorComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { calculatorComponent } from './component/calculator.component';\nimport { HeaderComponent } from './layout/header.component';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [HeaderComponent, calculatorComponent],\n  template: `\n    <main class=\"main\">\n    <div class=\"content\">\n      <app-header />\n      <div>\n        <hr>\n        <app-calculator />\n      </div>\n    </div>\n  </main>\n  `\n})\nexport class AppComponent {\n  title = 'storybook-example';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-b98293dd5d918dc0b4f1b156a1a5fa52dda3f4420c5ff163f02175c2edbd6f6e46ba913981c42eb956fd96e2e628352685a9d74407e006cb9c1898b9d94485f3",
+            "file": "src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "custom-button",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<button type=\"button\" class= \"button\" [ngClass]=\"primary ? '' : 'secondary'\" (click)=\"onClickButton($event)\" >{{label}}</button>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClickButton",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { NgClass } from '@angular/common';\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'custom-button',\n  standalone: true,\n  imports: [NgClass],\n  styleUrl: './button.component.scss',\n  template: `\n    <button type=\"button\" class= \"button\" [ngClass]=\"primary ? '' : 'secondary'\" (click)=\"onClickButton($event)\" >{{label}}</button>\n  `,\n})\nexport class ButtonComponent {\n\n  @Input() primary: boolean = true;\n  @Input() label: string = '';\n\n  @Output() onClick = new EventEmitter<any>();\n\n  onClickButton(event: MouseEvent) {\n    this.onClick.emit(event);\n  }\n}\n",
+            "styleUrl": "./button.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "calculatorComponent",
+            "id": "component-calculatorComponent-87f71ec684f438512cc42ae0b648aa8b34c7f59353bc55a664623ecd811bab3cf0630de57b4a227ec1a60a45c20b45bb6329a8b85b625836fe046f5899346767",
+            "file": "src/app/component/calculator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-calculator",
+            "styleUrls": [],
+            "styles": [
+                "\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    "
+            ],
+            "template": "<div class=\"calculator-container\">\n  <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n  <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n  <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n  <p class=\"result\">Calculation result {{calculationResult}}</p>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "calculationResult",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "firstNumber",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "secondNumber",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "calculate",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NumberInputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { ButtonComponent } from \"../../lib/button/button.component\";\nimport { NumberInputComponent } from '../../lib/input/number/number-input.component';\n\n@Component({\n  selector: 'app-calculator',\n  standalone: true,\n  imports: [NumberInputComponent, ButtonComponent],\n  template: `\n      <div class=\"calculator-container\">\n        <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n        <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n        <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n        <p class=\"result\">Calculation result {{calculationResult}}</p>\n      </div>\n    `,\n    styles: `\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    `\n})\nexport class calculatorComponent {\n\n  firstNumber: number = 1;\n  secondNumber: number = 1;\n\n  calculationResult: number = 1;\n\n  calculate(event: MouseEvent) {\n    this.calculationResult = this.firstNumber * this.secondNumber;\n    console.log('calculating ', this.firstNumber, ' * ', this.secondNumber, \" = \", this.calculationResult);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-758c6ae1e648310622602d1112777f30a1525eb5d8e4127e0968af13cf58cc84df7b4c9ccbf207d237ab887172c901db261a034c2e391f710fb9e1f7a8ad4b85",
+            "file": "src/app/layout/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<header>\n  <h1>Hello, {{ title }}</h1>\n</header>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'storybook-example'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  standalone: true,\n  template: `\n    <header>\n      <h1>Hello, {{ title }}</h1>\n    </header>\n  `\n})\nexport class HeaderComponent {\n  title = 'storybook-example';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "NumberInputComponent",
+            "id": "component-NumberInputComponent-922a9d1007eea90a1bd9ed172b41dd15076447a7ed08553d1819757a11e5c41cf3606004110581d6baff2b404ce1e029c78250c935d92658d8bb36b7df71dada",
+            "file": "src/lib/input/number/number-input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "custom-number-input",
+            "styleUrls": [],
+            "styles": [
+                "\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  "
+            ],
+            "template": "<div class=\"input-container\">\n  <label>{{ label }}</label>\n  <input type=\"number\" [value]=\"value\" (input)=\"onChange($event)\">\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "number | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "valueChange",
+                    "defaultValue": "new EventEmitter<number>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'custom-number-input',\n  standalone: true,\n  template: `\n    <div class=\"input-container\">\n      <label>{{ label }}</label>\n      <input type=\"number\" [value]=\"value\" (input)=\"onChange($event)\">\n    </div>\n  `,\n  styles: `\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  `,\n})\nexport class NumberInputComponent {\n\n  @Input() label: string = '';\n  @Input() value: number | undefined;\n  @Output() valueChange = new EventEmitter<number>();\n\n  onChange(event: Event) {\n    const newValue = (event.target as HTMLInputElement).valueAsNumber\n    this.value = newValue;\n    this.valueChange.emit(newValue);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  \n",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": [],
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/calculator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "calculatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/lib/input/number/number-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NumberInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            }
+        ]
+    }
+}

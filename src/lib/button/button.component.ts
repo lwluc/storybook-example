@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   imports: [NgClass],
   styleUrl: './button.component.scss',
   template: `
-    <button type="button" class= "button" [ngClass]="primary ? '' : 'green'" (click)="onClickButton($event)" >{{label}}</button>
+    <button type="button" class= "button" [ngClass]="primary ? '' : 'secondary'" (click)="onClickButton($event)" >{{label}}</button>
   `,
 })
 export class ButtonComponent {

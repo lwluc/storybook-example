@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { calculatorComponent } from './component/calculator.component';
+import { HeaderComponent } from './layout/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [calculatorComponent],
+  imports: [HeaderComponent, calculatorComponent],
   template: `
     <main class="main">
     <div class="content">
-      <h1>Hello, {{ title }}</h1>
+      <app-header />
       <div>
         <hr>
         <app-calculator />
