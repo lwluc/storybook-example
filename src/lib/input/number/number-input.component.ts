@@ -5,8 +5,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   standalone: true,
   template: `
     <div class="input-container">
-      <label>{{ label }}</label>
-      <input type="number" [value]="value" (input)="onChange($event)">
+      <label [htmlFor]="'number-input' + this.label">{{ label }}</label>
+      <input type="number" [id]="'number-input' + this.label" data-test [value]="value" (input)="onChange($event)">
     </div>
   `,
   styles: `

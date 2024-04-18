@@ -11,7 +11,7 @@ import { NumberInputComponent } from '../../lib/input/number/number-input.compon
         <custom-number-input label="First Number" [(value)]="firstNumber"></custom-number-input>
         <custom-number-input label="Second Number" [(value)]="secondNumber"></custom-number-input>
         <custom-button (onClick)="calculate($event)" label="Berechnen"></custom-button>
-        <p class="result">Calculation result {{calculationResult}}</p>
+        <p data-testid="calculation-result" class="result">Calculation result {{calculationResult}}</p>
       </div>
     `,
     styles: `

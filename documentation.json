@@ -161,7 +161,7 @@
         },
         {
             "name": "calculatorComponent",
-            "id": "component-calculatorComponent-87f71ec684f438512cc42ae0b648aa8b34c7f59353bc55a664623ecd811bab3cf0630de57b4a227ec1a60a45c20b45bb6329a8b85b625836fe046f5899346767",
+            "id": "component-calculatorComponent-ed0f17f3ebc6eaa94b3cc8f5669deb56f9105da3825166035878ec4e4b8c8b1a2d17ed861bce9e0f765fe00cca09b23bd988d068a027f26176f903df9c62b4ad",
             "file": "src/app/component/calculator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -173,7 +173,7 @@
             "styles": [
                 "\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    "
             ],
-            "template": "<div class=\"calculator-container\">\n  <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n  <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n  <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n  <p class=\"result\">Calculation result {{calculationResult}}</p>\n</div>\n",
+            "template": "<div class=\"calculator-container\">\n  <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n  <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n  <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n  <p data-testid=\"calculation-result\" class=\"result\">Calculation result {{calculationResult}}</p>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -259,7 +259,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { ButtonComponent } from \"../../lib/button/button.component\";\nimport { NumberInputComponent } from '../../lib/input/number/number-input.component';\n\n@Component({\n  selector: 'app-calculator',\n  standalone: true,\n  imports: [NumberInputComponent, ButtonComponent],\n  template: `\n      <div class=\"calculator-container\">\n        <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n        <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n        <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n        <p class=\"result\">Calculation result {{calculationResult}}</p>\n      </div>\n    `,\n    styles: `\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    `\n})\nexport class calculatorComponent {\n\n  firstNumber: number = 1;\n  secondNumber: number = 1;\n\n  calculationResult: number = 1;\n\n  calculate(event: MouseEvent) {\n    this.calculationResult = this.firstNumber * this.secondNumber;\n    console.log('calculating ', this.firstNumber, ' * ', this.secondNumber, \" = \", this.calculationResult);\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { ButtonComponent } from \"../../lib/button/button.component\";\nimport { NumberInputComponent } from '../../lib/input/number/number-input.component';\n\n@Component({\n  selector: 'app-calculator',\n  standalone: true,\n  imports: [NumberInputComponent, ButtonComponent],\n  template: `\n      <div class=\"calculator-container\">\n        <custom-number-input label=\"First Number\" [(value)]=\"firstNumber\"></custom-number-input>\n        <custom-number-input label=\"Second Number\" [(value)]=\"secondNumber\"></custom-number-input>\n        <custom-button (onClick)=\"calculate($event)\" label=\"Berechnen\"></custom-button>\n        <p data-testid=\"calculation-result\" class=\"result\">Calculation result {{calculationResult}}</p>\n      </div>\n    `,\n    styles: `\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    `\n})\nexport class calculatorComponent {\n\n  firstNumber: number = 1;\n  secondNumber: number = 1;\n\n  calculationResult: number = 1;\n\n  calculate(event: MouseEvent) {\n    this.calculationResult = this.firstNumber * this.secondNumber;\n    console.log('calculating ', this.firstNumber, ' * ', this.secondNumber, \" = \", this.calculationResult);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      .calculator-container {\n        .result {\n          width: 300px;\n          border-radius: 5px;\n          padding: 15px;\n          background-color: #e9e9e9;\n          box-shadow: 10px 10px #b8b7b7;\n        }\n      }\n    \n",
@@ -313,7 +313,7 @@
         },
         {
             "name": "NumberInputComponent",
-            "id": "component-NumberInputComponent-922a9d1007eea90a1bd9ed172b41dd15076447a7ed08553d1819757a11e5c41cf3606004110581d6baff2b404ce1e029c78250c935d92658d8bb36b7df71dada",
+            "id": "component-NumberInputComponent-025b6a8a6a648963be95e5570fe23cd1a8374de05be32ca7b5e68b3ce08dc7ab03e5ae7f6fa960be98a102e2dbc3c8f7663d0de56374ff1db45eacfc7098a673",
             "file": "src/lib/input/number/number-input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -325,7 +325,7 @@
             "styles": [
                 "\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  "
             ],
-            "template": "<div class=\"input-container\">\n  <label>{{ label }}</label>\n  <input type=\"number\" [value]=\"value\" (input)=\"onChange($event)\">\n</div>\n",
+            "template": "<div class=\"input-container\">\n  <label [htmlFor]=\"'number-input' + this.label\">{{ label }}</label>\n  <input type=\"number\" [id]=\"'number-input' + this.label\" data-test [value]=\"value\" (input)=\"onChange($event)\">\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -398,7 +398,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'custom-number-input',\n  standalone: true,\n  template: `\n    <div class=\"input-container\">\n      <label>{{ label }}</label>\n      <input type=\"number\" [value]=\"value\" (input)=\"onChange($event)\">\n    </div>\n  `,\n  styles: `\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  `,\n})\nexport class NumberInputComponent {\n\n  @Input() label: string = '';\n  @Input() value: number | undefined;\n  @Output() valueChange = new EventEmitter<number>();\n\n  onChange(event: Event) {\n    const newValue = (event.target as HTMLInputElement).valueAsNumber\n    this.value = newValue;\n    this.valueChange.emit(newValue);\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'custom-number-input',\n  standalone: true,\n  template: `\n    <div class=\"input-container\">\n      <label [htmlFor]=\"'number-input' + this.label\">{{ label }}</label>\n      <input type=\"number\" [id]=\"'number-input' + this.label\" data-test [value]=\"value\" (input)=\"onChange($event)\">\n    </div>\n  `,\n  styles: `\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  `,\n})\nexport class NumberInputComponent {\n\n  @Input() label: string = '';\n  @Input() value: number | undefined;\n  @Output() valueChange = new EventEmitter<number>();\n\n  onChange(event: Event) {\n    const newValue = (event.target as HTMLInputElement).valueAsNumber\n    this.value = newValue;\n    this.valueChange.emit(newValue);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n    .input-container {\n      display: flex;\n      flex-direction: column;\n\n      input[type=number] {\n        width: 100%;\n        padding: 12px 20px;\n        margin: 8px 0;\n        display: inline-block;\n        border: 1px solid #ccc;\n        border-radius: 4px;\n        box-sizing: border-box;\n      }\n\n    }\n  \n",
